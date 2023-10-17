@@ -1,0 +1,78 @@
+.report-view {
+    max-width: 600px;
+    margin: 0 auto;
+    font-family: Arial, sans-serif;
+}
+
+.report-view-form {
+    margin-top: 20px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 10px;
+}
+
+input[type="text"], input[type="email"], textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+textarea {
+    resize: vertical;
+}
+
+fieldset {
+    border: none;
+    padding: 0;
+}
+
+fieldset label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+#last-seen label {
+    display: inline-block;
+    margin-right: 15px;
+    vertical-align: middle;
+}
+
+button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+.dropzone {
+    border: 2px dashed #ccc;
+    padding: 20px;
+    text-align: center;
+    transition: background-color 0.2s;
+    cursor: pointer;
+}
+
+.dropzone:hover, .dropzone.dragover {
+    background-color: #f7f7f7;
+}
+
+.file-label {
+    color: #007bff;
+    text-decoration: underline;
+    cursor: pointer;
+}
