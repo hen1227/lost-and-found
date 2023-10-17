@@ -7,7 +7,7 @@ const FoundView = () => {
     const [lostItem, setLostItem] = useState(null)
 
     useEffect(() => {
-        fetch(`http://localhost:4004/lostItems/${id}`)
+        fetch(`http://10.31.64.37:4004/lostItems/${id}`)
             .then(response => response.json())
             .then(data => {
                 console.log(data);

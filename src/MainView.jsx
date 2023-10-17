@@ -6,7 +6,7 @@ const MainView = () => {
     const [lostItems, setLostItems] = useState([]);
 
     const updateLostItems = () => {
-        fetch('http://localhost:4004/lostItems')
+        fetch('http://10.31.64.37:4004/lostItems')
             .then(response => response.json())
             .then(data => setLostItems(data.items));
     }

@@ -18,6 +18,11 @@ const LostItemCard = ({ item }) => {
        return (`${toBase64(data.data)}`);
     }
 
+    const handleFound = () => {
+        // TODO: Prompt user of their email
+        // TODO: Send fetch request to backend to send email to both parties
+    }
+
     return (
         <div style={cardStyle}>
             <h2>{item.lostItem}</h2>
@@ -25,7 +30,7 @@ const LostItemCard = ({ item }) => {
             <p>{item.description}</p>
             <p>{item.email}</p>
             <img width={'80%'} style={{aspectRatio:1}} src={imageSrc(item.image)} alt={item.lostItem} />
-            <button >Item found</button>
+            <button onClick={handleFound} >Item found</button>
         </div>
     );
 }

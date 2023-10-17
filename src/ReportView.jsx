@@ -27,7 +27,7 @@ const ReportView = () => {
             image: image
         }
 
-        fetch('http://localhost:4004/lostItems', {
+        fetch('http://10.31.64.37:4004/lostItems', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
