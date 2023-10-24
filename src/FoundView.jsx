@@ -1,5 +1,6 @@
 import {useParams} from "react-router-dom";
 import {useEffect, useState} from "react";
+import sendAPICall from "./API";
 
 const FoundView = () => {
 
@@ -7,8 +8,7 @@ const FoundView = () => {
     const [lostItem, setLostItem] = useState(null)
 
     useEffect(() => {
-        fetch(`http://10.31.64.37:4004/lostItems/${id}`)
-            .then(response => response.json())
+        sendAPICall(`/lostItems/${id}`, 'GET', {})
             .then(data => {
                 console.log(data);
                 setLostItem(data.item);

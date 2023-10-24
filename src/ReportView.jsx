@@ -2,6 +2,7 @@ import {useState} from "react";
 import './ReportView.css';
 import {toast} from "react-toastify";
 import {useNavigate} from "react-router-dom";
+import sendAPICall from "./API";
 
 const ReportView = () => {
     const navigate = useNavigate();
@@ -27,14 +28,7 @@ const ReportView = () => {
             image: image
         }
 
-        fetch('http://10.31.64.37:4004/lostItems', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify(itemInfo)
-        })
-            .then(r => r.json())
+        sendAPICall('/lostItems', 'POST',  itemInfo)
             .then(data => {
                 console.log(data);
                 toast.success('Item reported successfully!');
