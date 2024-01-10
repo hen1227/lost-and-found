@@ -58,6 +58,3 @@ This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md
 * Contributors
 * External libraries used
 * Etc
-```
-
----

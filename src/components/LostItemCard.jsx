@@ -1,3 +1,4 @@
+import sendAPICall from "../API";
 
 
 const LostItemCard = ({ item }) => {
@@ -19,8 +20,12 @@ const LostItemCard = ({ item }) => {
     }
 
     const handleFound = () => {
-        // TODO: Prompt user of their email
-        // TODO: Send fetch request to backend to send email to both parties
+        sendAPICall(`/foundItem/${item.id}`, 'POST', {})
+            .then(data => {
+                console.log(data);
+            })
+
+        window.open(`mailto:${item.email}?subject=Your ${item.lostItem} has been found!&body=Hi ${item.name},\n\nYour ${item.lostItem} has been found! Please contact me at ${item.email} to arrange a pickup.\n\nThanks!`, '_blank');
     }
 
     return (

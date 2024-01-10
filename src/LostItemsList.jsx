@@ -10,7 +10,6 @@ const LostItemsList = ({ lostItems }) => {
             <div style={itemsCollectionStyle}>
                 {
                     lostItems.map((item, index) => {
-
                         return (
                             <LostItemCard key={index} item={item} />
                         )
