@@ -34,8 +34,14 @@ const LostItemCard = ({ item }) => {
             <p>{item.lastSeen}</p>
             <p>{item.description}</p>
             <p>{item.email}</p>
-            <img width={'80%'} style={{aspectRatio:1}} src={imageSrc(item.image)} alt={item.lostItem} />
-            <button onClick={handleFound} >Item found</button>
+            <img width={'80%'} style={{aspectRatio:1}} src={imageSrc(item.image)} alt={item.lostItem}  loading="lazy" />
+            <div style={{
+                justifyContent: 'bottom',
+
+            }}>
+                <button onClick={handleFound} >Item found</button>
+
+            </div>
         </div>
     );
 }
