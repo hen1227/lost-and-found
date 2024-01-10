@@ -86,11 +86,47 @@ const ReportView = () => {
         e.currentTarget.classList.remove('dragover');
     }
 
-
+    //const navigate = useNavigate();
+ 
+    const goToLostItems = () => {
+        navigate('/');
+    }
+ 
     return (
     <div>
+        <div style={{
+            flexDirection: 'row',
+            textAlign: 'center',
+            display: 'flex',
+            width: '100%',
+            justifyContent: 'center',
+
+        }}>
+            <h1
+            style={{
+                width: 'fit-content',
+                marginLeft: 'auto'
+                
+            }}
+            >Report View</h1>
+            <button
+            style={{
+                width: 'fit-content',
+                height: 'fit-content',
+                marginTop: 'auto',
+                marginBottom: 'auto',
+                marginRight: 'auto',
+                marginLeft: 20
+                
+
+
+            }} onClick={goToLostItems}>Back</button>
+
+
+        </div>
         <form className="report-view">
-            <h1>Report View</h1>
+
+
 
             <div className="form-group">
                 <label htmlFor="name">Name</label>

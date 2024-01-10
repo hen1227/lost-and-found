@@ -6,7 +6,6 @@ const LostItemsList = ({ lostItems }) => {
     console.log('LostItemsList', lostItems);
     return (
         <div>
-            <h2>Lost Items</h2>
             <div style={itemsCollectionStyle}>
                 {
                     lostItems.map((item, index) => {
