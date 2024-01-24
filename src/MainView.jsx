@@ -1,9 +1,12 @@
 import {useEffect, useState} from "react";
 import LostItemsList from "./LostItemsList";
 import sendAPICall from "./API";
+import {useNavigate} from "react-router-dom";
 
 
 const MainView = () => {
+    const navigate = useNavigate()
+    const [items, setItems] = useState([]);
     const [lostItems, setLostItems] = useState([]);
     const [pendingItems, setPendingItems] = useState([]);
     const [foundItems, setFoundItems] = useState([]);
@@ -11,9 +14,12 @@ const MainView = () => {
     const updateLostItems = () => {
         sendAPICall('/lostItems', 'GET', {})
             .then(data => {
+                setItems(data.items)
                 setLostItems(data.lost)
                 setPendingItems(data.pending)
                 setFoundItems(data.found)
+
+                console.log('data', data)
             });
     }
 
@@ -60,14 +66,14 @@ const MainView = () => {
             </div>
 
 
-            {lostItems && lostItems.length === 0 && <p>There are no lost items.</p>}
-            {lostItems && lostItems.length > 0 &&
-                <LostItemsList lostItems={lostItems} />
+            {items && items.length === 0 && <p>There are no lost items.</p>}
+            {items && items.length > 0 &&
+                <LostItemsList lostItems={items} />
             }
-            <h3>Pending Items</h3>
-            {pendingItems && pendingItems.length > 0 &&
-                <LostItemsList pendingItems={pendingItems} />
-            }
+            {/*<h3>Pending Items</h3>*/}
+            {/*{pendingItems && pendingItems.length > 0 &&*/}
+            {/*    <LostItemsList pendingItems={items} />*/}
+            {/*}*/}
         </div>
     );
 }

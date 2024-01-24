@@ -6,12 +6,12 @@ const LostItemCard = ({ item }) => {
     console.log('LostItemCard', item)
 
     const imageSrc = (data) => {
-        console.log('imageSrc', data)
+        // console.log('imageSrc', data)
         function toBase64(arr) {
             arr = new Uint8Array(arr)
-            console.log('toBase64', arr)
+            // console.log('toBase64', arr)
 
-            console.log(arr.reduce((data, byte) => data + String.fromCharCode(byte), ''))
+            // console.log(arr.reduce((data, byte) => data + String.fromCharCode(byte), ''))
             return (
                 arr.reduce((data, byte) => data + String.fromCharCode(byte), '')
             );
