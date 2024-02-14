@@ -57,16 +57,26 @@ const MainView = () => {
                     marginBottom: 'auto',
                     marginRight: 'auto',
                     marginLeft: 20
-
-
-
-                }} onClick={goToReport}>Report</button>
-
-
+                }} 
+                onClick={goToReport}>Report</button>
             </div>
 
 
-            {items && items.length === 0 && <p>There are no lost items.</p>}
+            {items && items.length === 0 && <p
+            style={{
+                color: '#FFFFFF',
+                fontSize: 18,
+                fontWeight: 'bold',
+                border: '#000 2px solid',
+                borderStyle: 'none',
+                background: '#68B765',
+                width: 200,
+                margin: '0 auto',
+                padding: "9px 7px"
+            }} 
+            >There are currently no lost items!</p>}
+
+
             {items && items.length > 0 &&
                 <LostItemsList lostItems={items} />
             }
